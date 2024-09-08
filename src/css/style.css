@@ -1,0 +1,498 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  text-decoration: none;
+  font-family: "Varela Round", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Robus;
+  src: url("/src/fonts/Robus.otf") format("opentype");
+}
+@font-face {
+  font-family: Super-Rugged;
+  src: url("/src/fonts/Super-Rugged.ttf") format("truetype");
+}
+
+button,
+input[type="submit"],
+label[for="signup"],
+label[for="login"],
+.forswitch {
+  cursor: pointer;
+}
+
+body {
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 750px;
+  height: 550px;
+  background-color: rgb(235, 235, 235);
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px rgb(94, 162, 207);
+}
+
+.submain {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: inset -0px -0px 50px rgb(14, 101, 155);
+}
+.submain .logo {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 5;
+  padding: 5px 0 0 0;
+  font-size: 1.5em;
+}
+.submain .logo * {
+  font-family: Robus, sans-serif !important;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  padding: 0 0 0 20px;
+  color: rgb(255, 255, 255);
+  transition: color 0.3s linear;
+}
+.submain label,
+p {
+  font-size: 0.8em;
+}
+.submain h1 {
+  font-size: 0.9em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.dynamicform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 62%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  transition: top 0.4s ease-in-out, right 0.4s ease-in-out;
+}
+.dynamicform .signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-left: 50px;
+}
+.dynamicform .login {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Sign Up Form */
+.dynamicform .signup,
+.dynamicform .login {
+  flex-direction: column;
+  width: 70%;
+}
+.dynamicform .signup > div > div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 0 25px 0;
+}
+.dynamicform .signup > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.dynamicform .signup > div > form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.dynamicform .signup input[type='text'] {
+  height: 34px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgb(164, 164, 195);
+  outline: none;
+}
+.dynamicform .signup input[type='text']:focus {
+  border: 1px solid rgb(0, 89, 152);
+}
+.dynamicform .signup input[type="submit"] {
+  display: none;
+}
+.dynamicform .signup label[for="signup"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(14, 101, 155);
+  padding: 0;
+  color: white;
+  border: none;
+  margin: 10px 0 0 0;
+  height: 34px;
+  border-radius: 5px;
+  outline: none;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+.dynamicform .signup label[for="signup"]::after{
+  display: block;
+  content: "";
+  width: 120%;
+  height: 300%;
+  border-radius: 100%;
+  position: absolute;
+  z-index: -2;
+  top: 100%;
+  left: -120%;
+  transition: all .3s ease-in-out;
+  background-color: #3f8ab9d4;
+}
+.dynamicform .signup label[for="signup"]::before{
+  display: block;
+  content: "";
+  width: 120%;
+  height: 300%;
+  border-radius: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  left: -120%;
+  transition: all .3s ease-in-out .1s;
+  background-color: #086098fd;
+}
+.dynamicform .signup label[for="signup"]:hover::after {
+  top: -80%;
+  left: -10%;
+}
+.dynamicform .signup label[for="signup"]:hover::before {
+  top: -80%;
+  left: -10%;
+}
+.dynamicform .signup label {
+  /* font-size: 13px; */
+  margin: 0 0 2px 0;
+}
+.dynamicform .signup > div:last-of-type {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.dynamicform .signup > div > form > div:nth-of-type(1) {
+  display: flex;
+  width: 100%;
+  margin: 0 0 5px 0;
+}
+.dynamicform .signup > div > form > div:nth-of-type(1) > div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.dynamicform .signup > div > form > div:nth-of-type(3) {
+  display: flex;
+  align-items: center;
+  margin: 5px 0 0 0;
+  gap: 10px;
+}
+.dynamicform .signup > div > form > div:nth-of-type(1) > div:first-of-type {
+  margin: 0 1% 0 0;
+  width: 49%;
+}
+.dynamicform .signup > div > form > div:nth-of-type(1) > div:last-of-type {
+  margin: 0 0 0 1%;
+  width: 49%;
+}
+.dynamicform .signup > div > form > div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+}
+.dynamicform .signup > div > form > div:nth-of-type(2) > input:nth-of-type(1) {
+  margin: 0 0 10px 0;
+}
+
+/* Log In Form */
+.dynamicform .login > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.dynamicform .login > div > form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.dynamicform .login > div > div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin: 0 0 25px 0;
+}
+.dynamicform .login > div > div:first-of-type * {
+  text-align: center;
+}
+.dynamicform .login input[type='text'] {
+  height: 34px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid rgb(164, 164, 195);
+  outline: none;
+}
+.dynamicform .login input[type='text']:focus {
+  border: 1px solid rgb(0, 89, 152);
+}
+.dynamicform .login div > form > input[type="submit"] {
+ display: none;
+}
+.dynamicform .login label[for="login"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(14, 101, 155);
+  padding: 0;
+  color: white;
+  border: none;
+  margin: 10px 0 0 0;
+  height: 34px;
+  border-radius: 5px;
+  outline: none;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+.dynamicform .login label[for="login"]::after{
+  display: block;
+  content: "";
+  width: 120%;
+  height: 300%;
+  border-radius: 100%;
+  position: absolute;
+  z-index: -2;
+  top: 100%;
+  left: -120%;
+  transition: all .3s ease-in-out;
+  background-color: #3f8ab9d4;
+}
+.dynamicform .login label[for="login"]::before{
+  display: block;
+  content: "";
+  width: 120%;
+  height: 300%;
+  border-radius: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 100%;
+  left: -120%;
+  transition: all .3s ease-in-out .1s;
+  background-color: #086098fd;
+}
+.dynamicform .login label[for="login"]:hover::after {
+  top: -80%;
+  left: -10%;
+}
+.dynamicform .login label[for="login"]:hover::before {
+  top: -80%;
+  left: -10%;
+}
+.dynamicform .login label {
+  /* font-size: 13px; */
+  margin: 0 0 2px 0;
+}
+.dynamicform .login > div:last-of-type {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.dynamicform .login > div > form > div:nth-of-type(1) {
+  display: flex;
+  width: 100%;
+  margin: 0 0 5px 0;
+  flex-direction: column;
+}
+.dynamicform .login > div > form > div:nth-of-type(1) > input:first-of-type {
+  margin: 0 0 10px 0;
+}
+.dynamicform .login > div > form > div:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  margin: 5px 0 0 0;
+  gap: 10px;
+}
+.dynamicform .login > div > form > div:nth-of-type(2) {
+  display: flex;
+  align-items: center;
+  margin: 5px 0 0 0;
+  justify-content: space-between;
+  width: 100%;
+}
+.dynamicform .login > div > form > div:nth-of-type(2) div:first-of-type {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.9em;
+}
+.dynamicform .login > div > form > div:nth-of-type(2) div:last-of-type {
+  font-size: 0.8em;
+}
+
+/* Switch btween Log In and Sign Up */
+.switchactivitycont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38%;
+  height: 100%;
+  background-color: rgb(14, 101, 155);
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  padding: 15px;
+  transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
+  z-index: 1;
+}
+.switchactivitycont::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.4s ease-in-out;
+  background-color: #0e659b;
+  transform-origin: bottom left;
+  transform: skew(-8deg, 0deg);
+}
+.switchactivitycont > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  padding: 10px;
+}
+.switchactivitycont > div p {
+  /* font-size: 12px; */
+  text-align: center;
+  width: 100%;
+}
+.switchactivitycont > div label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.switchactivitycont > div:last-of-type {
+  display: none;
+}
+.switchactivitycont > label:last-of-type {
+  background-color: white;
+  padding: 20px;
+  display: none;
+}
+.forswitch {
+  border: 1px solid;
+  width: 100px;
+  height: 30px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.forswitch:hover {
+  color: #0e659b;
+}
+.forswitch::before {
+  position: absolute;
+  content: "";
+  width: 300%;
+  border-radius: 100%;
+  height: 600%;
+  display: block;
+  background-color: #ffffff;
+  top: 100%;
+  left: -300%;
+  transition: all .5s;
+  z-index: -1;
+}
+.forswitch:hover::before{
+  top: -50%;
+  left: -100%;
+}
+.switchactivity {
+  display: none;
+}
+.switchactivity:checked ~ .logo * {
+  color: #0e659b !important;
+}
+.switchactivity:checked ~ .switchactivitycont {
+  left: 62%;
+}
+.switchactivity:checked ~ .switchactivitycont > div:first-of-type {
+  display: none;
+}
+.switchactivity:checked ~ .switchactivitycont > div:last-of-type {
+  display: flex;
+}
+.switchactivity:checked ~ .switchactivitycont::after {
+  transform-origin: bottom left;
+  transform: skew(8deg, 0deg);
+}
+.switchactivity:checked ~ .dynamicform {
+  right: 38%;
+}
+.switchactivity:checked ~ .dynamicform .login {
+  display: flex;
+  margin-right: 50px;
+}
+.switchactivity:checked ~ .dynamicform .signup {
+  display: none;
+}
+
+/* Socials */
+.fbicon,
+.xicon,
+.giticon {
+  padding: 2px;
+  color: #ffffff;
+  background: #0e659b;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
