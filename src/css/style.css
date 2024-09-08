@@ -18,6 +18,11 @@
   src: url("../../src/fonts/Super-Rugged.ttf") format("truetype");
 }
 
+title{
+  font-family: Robus, sans-serif !important;
+  color: red;
+}
+
 button,
 input[type="submit"],
 label[for="signup"],
