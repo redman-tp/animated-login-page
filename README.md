@@ -17,7 +17,7 @@ A login and sign-up page built with only HTML and CSS. The page features a sleek
 ## Screenshots
 
 ### Login Form
-![Login Form](src/assets/login.png)
+![Login Form](src/assets/log-in.png)
 
 ### Sign-Up Form
 ![Sign-Up Form](src/assets/signup.png)
